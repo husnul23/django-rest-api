@@ -15,11 +15,11 @@ def pending(request):
 def delete_all(request):
     return render(request, 'todo/index.html')
 
-def update(request):
+def update(request, id):
     return render(request, 'todo/index.html')
 
 def create(request):
     return render(request, 'todo/index.html')
 
-def delete(request):
+def delete(request, id):
     return render(request, 'todo/index.html')
