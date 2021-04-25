@@ -28,17 +28,8 @@
 						<div class="view">
 							<input class="toggle" type="checkbox" checked>
 							<label>Taste JavaScript</label>
-							<button class="destroy"></button>
+							<a href="{% url 'delete' 10 %}" class="destroy"></a>
 						</div>
-						<input class="edit" value="Create a TodoMVC template">
-					</li>
-					<li>
-						<div class="view">
-							<input class="toggle" type="checkbox">
-							<label>Buy a unicorn</label>
-							<button class="destroy"></button>
-						</div>
-						<input class="edit" value="Rule the web">
 					</li>
 				</ul>
 			</section>
@@ -49,17 +40,17 @@
 				<!-- Remove this if you don't implement routing -->
 				<ul class="filters">
 					<li>
-						<a class="selected" href="#/">All</a>
+						<a class="selected" href="{% url 'index' %}">All</a>
 					</li>
 					<li>
-						<a href="#/active">Active</a>
+						<a href="{% url 'done' %}">Done</a>
 					</li>
 					<li>
-						<a href="#/completed">Completed</a>
+						<a href="{% url 'pending' %}">Pending</a>
 					</li>
 				</ul>
 				<!-- Hidden if no completed items are left ↓ -->
-				<button class="clear-completed">Clear completed</button>
+				<a href="{% url 'delete_all' %}" class="clear-completed">Delete All</a>
 			</footer>
 		</section>
 		<!-- Scripts here. Don't remove ↓ -->
