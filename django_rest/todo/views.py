@@ -1,8 +1,7 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-# Create your views here.
-
+from django.shortcuts import render, reverse
+from django.http import HttpResponseRedirect
 from .models import Todo
+from django.core.exceptions import ObjectDoesNotExist
 
 def index(request):
     items = Todo.objects.order_by('-id')
@@ -17,13 +16,32 @@ def pending(request):
     return render(request, 'todo/index.html', {'items': items})
 
 def delete_all(request):
-    return render(request, 'todo/index.html')
+    Todo.objects.all().delete()
+    return HttpResponseRedirect(reverse('index'))
 
 def update(request, id):
-    return render(request, 'todo/index.html')
+    try:
+        todo = Todo.objects.get(id=id)
+        todo.status = not todo.status
+        todo.save()
+
+        return HttpResponseRedirect(reverse('index'))
+    except ObjectDoesNotExist:
+        return HttpResponseRedirect(reverse('index'))
 
 def create(request):
-    return render(request, 'todo/index.html')
+    try:
+        title = request.POST['title']
+        todo = Todo(title=title)
+        todo.save()
+        return HttpResponseRedirect(reverse('index'))
+    except Exception:
+        return HttpResponseRedirect(reverse('index'))
 
 def delete(request, id):
-    return render(request, 'todo/index.html')
+    try:
+        todo = Todo.objects.get(id=id)
+        todo.delete()
+        return HttpResponseRedirect(reverse('index'))
+    except ObjectDoesNotExist:
+        return HttpResponseRedirect(reverse('index'))
