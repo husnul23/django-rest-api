@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="b39bca38-edc9-49a8-90b5-8563b14f6356" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_rest/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/django_rest/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_rest/todo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_rest/todo/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_rest/todo/templates/todo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_rest/todo/templates/todo/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_rest/todo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_rest/todo/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -105,6 +108,10 @@
           <url>file://$PROJECT_DIR$/main.py</url>
           <line>8</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/django_rest/todo/views.py</url>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
